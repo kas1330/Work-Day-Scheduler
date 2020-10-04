@@ -17,10 +17,14 @@ $(document).ready(function(){
     //LLLL is locale support
     $('#currentDay').text(now.format('LLLL'));
 
+    //Get the current hour of the day
     var currentHour = now.format('hA'); 
     console.log('Current Hour is: ', currentHour);
 
+    //Get the integer value
     var currentHourInt = parseInt(currentHour);
+
+    //convert to 24hr time if necessary
     if(currentHourInt <= 5){
         currentHourInt = currentHourInt + 12;
     }
@@ -30,8 +34,21 @@ $(document).ready(function(){
 
     for(var i = 0; i < blockArr.length; i++){
         if(blockArr[i] < currentHourInt){
-
+            //turn these blocks gray because they're in the past
+            var idStr = blockArr[i].toString();
+            console.log('String of int is: ', idStr);
         }
+        else if(blockArr[i] === currentHourInt){
+            //Turn this block  red
+            var idStr = blockArr[i].toString();
+            console.log('String of int is: ', idStr);
+        }
+        else if(blockArr[i] > currentHourInt){
+            //Turn these blocks green
+            var idStr = blockArr[i].toString();
+            console.log('String of int is: ', idStr);
+        }
+
     }
 
 
