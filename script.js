@@ -33,20 +33,33 @@ $(document).ready(function(){
     var blockArr = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
     for(var i = 0; i < blockArr.length; i++){
-        if(blockArr[i] < currentHourInt){
+        if(blockArr[i] < moment().hour()){
             //turn these blocks gray because they're in the past
             var idStr = blockArr[i].toString();
             console.log('String of int is: ', idStr);
+            var idStr = '#' + idStr;
+            console.log('String of int is: ', idStr);
+            $(idStr).addClass('past');
+
         }
-        else if(blockArr[i] === currentHourInt){
+        else if(blockArr[i] === moment().hour()){
             //Turn this block  red
             var idStr = blockArr[i].toString();
             console.log('String of int is: ', idStr);
+            var idStr = '#' + idStr;
+            console.log('String of int is: ', idStr);
+            $(idStr).addClass('present')
+
+
         }
-        else if(blockArr[i] > currentHourInt){
+        else if(blockArr[i] > moment().hour()){
             //Turn these blocks green
             var idStr = blockArr[i].toString();
             console.log('String of int is: ', idStr);
+            var idStr = '#' + idStr;
+            console.log('String of int is: ', idStr);
+            $(idStr).addClass('future')
+
         }
 
     }
