@@ -32,6 +32,8 @@ $(document).ready(function(){
 
     var blockArr = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 
+
+    //This for loop sets the colors
     for(var i = 0; i < blockArr.length; i++){
         if(blockArr[i] < moment().hour()){
             //turn these blocks gray because they're in the past
@@ -63,6 +65,27 @@ $(document).ready(function(){
         }
 
     }
+
+    var buttonArr = [
+        {inputId: '9', btnId: '9AMSaveBtn'},
+        {inputId: '10', btnId: '10AMSaveBtn'},
+        {inputId: '11', btnId: '11AMSaveBtn'},
+        {inputId: '12', btnId: '12PMSaveBtn'},
+        {inputId: '13', btnId: '1PMSaveBtn'},
+        {inputId: '14', btnId: '2PMSaveBtn'},
+        {inputId: '15', btnId: '3PMSaveBtn'},
+        {inputId: '16', btnId: '4PMSaveBtn'},
+        {inputId: '17', btnId: '5PMSaveBtn'},
+
+    ]
+
+    //When save button is clicked do this
+    $('button').click(function(){
+        var i = this.id;
+        console.log('button clicked is: ', i);
+
+
+    })
 
 
 
