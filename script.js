@@ -82,7 +82,6 @@ $(document).ready(function(){
     //When save button is clicked do this
     $('button').click(function(){
         var i = this.id;
-        var i = i.toString();
         console.log('button clicked is: ', i);
 
         //Get the inputId matching the btnId
@@ -93,6 +92,11 @@ $(document).ready(function(){
                 console.log('If statement is running');
                 var inputJ = buttonArr[j].inputId;
                 console.log('InputId: ', inputJ);
+
+                //Get the text from the input box matching inputJ
+                var inputJ = '#' + inputJ;
+                var inputVal = $(inputJ).val();
+                console.log('Input is: ', inputVal);
             }
         }
     })
