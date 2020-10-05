@@ -67,24 +67,34 @@ $(document).ready(function(){
     }
 
     var buttonArr = [
-        {inputId: '9', btnId: '9AMSaveBtn'},
-        {inputId: '10', btnId: '10AMSaveBtn'},
-        {inputId: '11', btnId: '11AMSaveBtn'},
-        {inputId: '12', btnId: '12PMSaveBtn'},
-        {inputId: '13', btnId: '1PMSaveBtn'},
-        {inputId: '14', btnId: '2PMSaveBtn'},
-        {inputId: '15', btnId: '3PMSaveBtn'},
-        {inputId: '16', btnId: '4PMSaveBtn'},
-        {inputId: '17', btnId: '5PMSaveBtn'},
+        {inputId: '9', btnId: '9AMsaveBtn'},
+        {inputId: '10', btnId: '10AMsaveBtn'},
+        {inputId: '11', btnId: '11AMsaveBtn'},
+        {inputId: '12', btnId: '12PMsaveBtn'},
+        {inputId: '13', btnId: '1PMsaveBtn'},
+        {inputId: '14', btnId: '2PMsaveBtn'},
+        {inputId: '15', btnId: '3PMsaveBtn'},
+        {inputId: '16', btnId: '4PMsaveBtn'},
+        {inputId: '17', btnId: '5PMsaveBtn'}
 
-    ]
+    ];
 
     //When save button is clicked do this
     $('button').click(function(){
         var i = this.id;
+        var i = i.toString();
         console.log('button clicked is: ', i);
 
-
+        //Get the inputId matching the btnId
+        for(var j = 0; j < buttonArr.length; j++){
+            console.log('For loop is running', j);
+            console.log('Compare buttonArr: ', buttonArr[j].btnId, 'i: ', i)
+            if(buttonArr[j].btnId === i){
+                console.log('If statement is running');
+                var inputJ = buttonArr[j].inputId;
+                console.log('InputId: ', inputJ);
+            }
+        }
     })
 
 
