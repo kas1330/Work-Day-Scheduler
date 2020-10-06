@@ -102,10 +102,7 @@ $(document).ready(function(){
                 localStorage.setItem(inputJ, inputVal);
                 console.log(localStorage);
 
-                // var storedInput = (localStorage.getItem('storedInput')) ||'';
 
-                // var retrievedItem = localStorage.setItem('storedInput', inputVal);
-                // console.log('retrieved item: ', retrievedItem);
             }
         }
     })
