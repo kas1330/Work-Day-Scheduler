@@ -86,10 +86,10 @@ $(document).ready(function(){
 
         //Get the inputId matching the btnId
         for(var j = 0; j < buttonArr.length; j++){
-            console.log('For loop is running', j);
-            console.log('Compare buttonArr: ', buttonArr[j].btnId, 'i: ', i)
+            // console.log('For loop is running', j);
+            // console.log('Compare buttonArr: ', buttonArr[j].btnId, 'i: ', i)
             if(buttonArr[j].btnId === i){
-                console.log('If statement is running');
+                // console.log('If statement is running');
                 var inputJ = buttonArr[j].inputId;
                 console.log('InputId: ', inputJ);
 
@@ -97,6 +97,15 @@ $(document).ready(function(){
                 var inputJ = '#' + inputJ;
                 var inputVal = $(inputJ).val();
                 console.log('Input is: ', inputVal);
+
+                //(inputJ, inputval)
+                localStorage.setItem(inputJ, inputVal);
+                console.log(localStorage);
+
+                // var storedInput = (localStorage.getItem('storedInput')) ||'';
+
+                // var retrievedItem = localStorage.setItem('storedInput', inputVal);
+                // console.log('retrieved item: ', retrievedItem);
             }
         }
     })
