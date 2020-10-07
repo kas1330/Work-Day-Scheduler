@@ -47,18 +47,16 @@ $(document).ready(function(){
     //When save button is clicked do this
     $('button').click(function(){
         var i = this.id;
-        // console.log('button clicked is: ', i);
 
         //Get the inputId matching the btnId
         for(var j = 0; j < buttonArr.length; j++){
-            // console.log('For loop is running', j);
-            // console.log('Compare buttonArr: ', buttonArr[j].btnId, 'i: ', i)
+            
             if(buttonArr[j].btnId === i){
+                
                 var inputJ = buttonArr[j].inputId;
                 //Get the text from the input box matching inputJ
                 var inputJ = '#' + inputJ;
                 var inputVal = $(inputJ).val();
-                // console.log('Input is: ', inputVal);
 
                 //Save the item in local storage
                 localStorage.setItem(inputJ, inputVal);
@@ -66,9 +64,6 @@ $(document).ready(function(){
             }
         }
     })
-
-
-
 })
 
 
