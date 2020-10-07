@@ -31,36 +31,41 @@ $(document).ready(function(){
     console.log('Int is: ', currentHourInt);
 
     var blockArr = [9, 10, 11, 12, 13, 14, 15, 16, 17];
+//# + blockArr[i]
 
 
+    $('#10').val(localStorage.getItem('#10'))
     //This for loop sets the colors
     for(var i = 0; i < blockArr.length; i++){
+        var idStr = blockArr[i].toString();
+        // $('#'+ blockArr[i].toString()).val(localStorage.getItem)
+        //put localstorage.getItem here?
+        // var lclStore = localStorage.getItem(inputJ);
+        // $(inputJ).val(lclStore);
         if(blockArr[i] < moment().hour()){
             //turn these blocks gray because they're in the past
-            var idStr = blockArr[i].toString();
+            
             console.log('String of int is: ', idStr);
-            var idStr = '#' + idStr;
-            console.log('String of int is: ', idStr);
-            $(idStr).addClass('past');
+            var idStrs = '#' + idStr;
+            console.log('String of int is: ', idStrs);
+            $(idStrs).addClass('past');
 
         }
         else if(blockArr[i] === moment().hour()){
             //Turn this block  red
-            var idStr = blockArr[i].toString();
             console.log('String of int is: ', idStr);
-            var idStr = '#' + idStr;
-            console.log('String of int is: ', idStr);
-            $(idStr).addClass('present')
+            var idStrs = '#' + idStr;
+            console.log('String of int is: ', idStrs);
+            $(idStrs).addClass('present')
 
 
         }
         else if(blockArr[i] > moment().hour()){
             //Turn these blocks green
-            var idStr = blockArr[i].toString();
             console.log('String of int is: ', idStr);
-            var idStr = '#' + idStr;
-            console.log('String of int is: ', idStr);
-            $(idStr).addClass('future')
+            var idStrs = '#' + idStr;
+            console.log('String of int is: ', idStrs);
+            $(idStrs).addClass('future')
 
         }
 
@@ -101,6 +106,10 @@ $(document).ready(function(){
                 //(inputJ, inputval)
                 localStorage.setItem(inputJ, inputVal);
                 console.log(localStorage);
+
+                var lclStore = localStorage.getItem(inputJ);
+                $(inputJ).val(lclStore);
+
 
 
             }
