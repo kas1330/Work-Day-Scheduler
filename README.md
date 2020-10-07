@@ -13,8 +13,7 @@
    refresh is hit. Working locally not on github 
    pages. <----Resolved 10/6
 
-The link to the deployed app and the image of it are not showing up on GitHub.
 
 Link to deployed app: https://kas1330.github.io/Work-Day-Scheduler/
 
-<img src='workdaySchedulerPic.png' alt='Workday planner'>
+<img src='workdaySchedulerPic.PNG' alt='Workday planner'>
