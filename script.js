@@ -34,14 +34,14 @@ $(document).ready(function(){
 //# + blockArr[i]
 
 
-    $('#10').val(localStorage.getItem('#10'))
-    //This for loop sets the colors
+    // $('#10').val(localStorage.getItem('#10'))
+    //This for loop sets the colors and keeps local storage displayed on the page
     for(var i = 0; i < blockArr.length; i++){
+        //Keep items displayed on page
         var idStr = blockArr[i].toString();
-        // $('#'+ blockArr[i].toString()).val(localStorage.getItem)
-        //put localstorage.getItem here?
-        // var lclStore = localStorage.getItem(inputJ);
-        // $(inputJ).val(lclStore);
+        var idP = '#' + idStr;
+        $(idP).val(localStorage.getItem(idP));
+
         if(blockArr[i] < moment().hour()){
             //turn these blocks gray because they're in the past
             
