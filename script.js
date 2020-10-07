@@ -7,10 +7,7 @@ $(document).ready(function(){
 
     //Array for the for loop to iterate through
     var blockArr = [9, 10, 11, 12, 13, 14, 15, 16, 17];
-//# + blockArr[i]
 
-
-    // $('#10').val(localStorage.getItem('#10'))
     //This for loop sets the colors and keeps local storage displayed on the page
     for(var i = 0; i < blockArr.length; i++){
         //Keep items displayed on page
@@ -22,24 +19,15 @@ $(document).ready(function(){
 
         if(blockArr[i] < moment().hour()){
             //turn these blocks gray because they're in the past        
-            // console.log('String of int is: ', idStr);
-            var idStrs = '#' + idStr;
-            // console.log('String of int is: ', idStrs);
-            $(idStrs).addClass('past');
+            $(idP).addClass('past');
         }
         else if(blockArr[i] === moment().hour()){
             //Turn this block red because this is current time
-            // console.log('String of int is: ', idStr);
-            var idStrs = '#' + idStr;
-            // console.log('String of int is: ', idStrs);
-            $(idStrs).addClass('present')
+            $(idP).addClass('present')
         }
         else if(blockArr[i] > moment().hour()){
             //Turn these blocks green because this is future
-            // console.log('String of int is: ', idStr);
-            var idStrs = '#' + idStr;
-            // console.log('String of int is: ', idStrs);
-            $(idStrs).addClass('future')
+            $(idP).addClass('future')
         }
     }
 
@@ -66,10 +54,7 @@ $(document).ready(function(){
             // console.log('For loop is running', j);
             // console.log('Compare buttonArr: ', buttonArr[j].btnId, 'i: ', i)
             if(buttonArr[j].btnId === i){
-                // console.log('If statement is running');
                 var inputJ = buttonArr[j].inputId;
-                // console.log('InputId: ', inputJ);
-
                 //Get the text from the input box matching inputJ
                 var inputJ = '#' + inputJ;
                 var inputVal = $(inputJ).val();

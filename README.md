@@ -10,4 +10,5 @@
 6. Save the vale of the input to localStorage.
 7. Display all the value that are help in 
    localStorage in the appropriate timeBlock after
-   refresh is hit. <---- working locally, not on github pages 10/6
+   refresh is hit. Working locally not on github 
+   pages. <----Resolved 10/6
