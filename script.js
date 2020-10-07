@@ -39,8 +39,10 @@ $(document).ready(function(){
     for(var i = 0; i < blockArr.length; i++){
         //Keep items displayed on page
         var idStr = blockArr[i].toString();
+        console.log('String id: ', idStr);
         var idP = '#' + idStr;
-        $('#10').val(localStorage.getItem('#10'));
+        console.log('String idP: ', idP);
+        $(idP).val(localStorage.getItem(idP));
 
         if(blockArr[i] < moment().hour()){
             //turn these blocks gray because they're in the past
