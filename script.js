@@ -1,35 +1,11 @@
-/*
-Task 1
-create a function that uses (.setAttribute) to set css if time is past present of future
-Task 2 
-get the input from the html doc
-Task 3
-eventListener for the button. 
-Task 4
-JSON.stringify/parse get and set to localStorage
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist*/
 
 $(document).ready(function(){
 
+    //Set the current day and time in html equal to current day and time
     var now = moment();
-    //LLLL is locale support
     $('#currentDay').text(now.format('LLLL'));
 
-    //Get the current hour of the day
-    var currentHour = now.format('hA'); 
-    console.log('Current Hour is: ', currentHour);
-
-    //Get the integer value
-    var currentHourInt = parseInt(currentHour);
-
-    //convert to 24hr time if necessary
-    if(currentHourInt <= 5){
-        currentHourInt = currentHourInt + 12;
-    }
-    console.log('Int is: ', currentHourInt);
-
+    //Array for the for loop to iterate through
     var blockArr = [9, 10, 11, 12, 13, 14, 15, 16, 17];
 //# + blockArr[i]
 
@@ -45,34 +21,29 @@ $(document).ready(function(){
         $(idP).val(localStorage.getItem(idP));
 
         if(blockArr[i] < moment().hour()){
-            //turn these blocks gray because they're in the past
-            
-            console.log('String of int is: ', idStr);
+            //turn these blocks gray because they're in the past        
+            // console.log('String of int is: ', idStr);
             var idStrs = '#' + idStr;
-            console.log('String of int is: ', idStrs);
+            // console.log('String of int is: ', idStrs);
             $(idStrs).addClass('past');
-
         }
         else if(blockArr[i] === moment().hour()){
-            //Turn this block  red
-            console.log('String of int is: ', idStr);
+            //Turn this block red because this is current time
+            // console.log('String of int is: ', idStr);
             var idStrs = '#' + idStr;
-            console.log('String of int is: ', idStrs);
+            // console.log('String of int is: ', idStrs);
             $(idStrs).addClass('present')
-
-
         }
         else if(blockArr[i] > moment().hour()){
-            //Turn these blocks green
-            console.log('String of int is: ', idStr);
+            //Turn these blocks green because this is future
+            // console.log('String of int is: ', idStr);
             var idStrs = '#' + idStr;
-            console.log('String of int is: ', idStrs);
+            // console.log('String of int is: ', idStrs);
             $(idStrs).addClass('future')
-
         }
-
     }
 
+    //Button array used to find out what saveBtn was clicked
     var buttonArr = [
         {inputId: '9', btnId: '9AMsaveBtn'},
         {inputId: '10', btnId: '10AMsaveBtn'},
@@ -83,13 +54,12 @@ $(document).ready(function(){
         {inputId: '15', btnId: '3PMsaveBtn'},
         {inputId: '16', btnId: '4PMsaveBtn'},
         {inputId: '17', btnId: '5PMsaveBtn'}
-
     ];
 
     //When save button is clicked do this
     $('button').click(function(){
         var i = this.id;
-        console.log('button clicked is: ', i);
+        // console.log('button clicked is: ', i);
 
         //Get the inputId matching the btnId
         for(var j = 0; j < buttonArr.length; j++){
@@ -98,22 +68,16 @@ $(document).ready(function(){
             if(buttonArr[j].btnId === i){
                 // console.log('If statement is running');
                 var inputJ = buttonArr[j].inputId;
-                console.log('InputId: ', inputJ);
+                // console.log('InputId: ', inputJ);
 
                 //Get the text from the input box matching inputJ
                 var inputJ = '#' + inputJ;
                 var inputVal = $(inputJ).val();
-                console.log('Input is: ', inputVal);
+                // console.log('Input is: ', inputVal);
 
-                //(inputJ, inputval)
+                //Save the item in local storage
                 localStorage.setItem(inputJ, inputVal);
                 console.log(localStorage);
-
-                var lclStore = localStorage.getItem(inputJ);
-                $(inputJ).val(lclStore);
-
-
-
             }
         }
     })
