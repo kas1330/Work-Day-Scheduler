@@ -40,7 +40,7 @@ $(document).ready(function(){
         //Keep items displayed on page
         var idStr = blockArr[i].toString();
         var idP = '#' + idStr;
-        $(idP).val(localStorage.getItem(idP));
+        $('#10').val(localStorage.getItem('#10'));
 
         if(blockArr[i] < moment().hour()){
             //turn these blocks gray because they're in the past
